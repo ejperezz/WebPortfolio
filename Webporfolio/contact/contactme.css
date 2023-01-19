@@ -1,0 +1,268 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  
+}
+body {
+  font-family: sans-serif;
+  background: url('/images/background.jpeg')
+  
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+.container {
+  background-color: black;
+}
+.row {
+  width: 80%;
+  margin: auto;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  align-items: center;
+}
+.navbar .main-menu {
+  display: flex;
+}
+.main-menu li a {
+  display: inline-block;
+  padding: 10px 20px;
+}
+li a:hover {
+  background-color: rgb(76, 76, 130);
+}
+.menu-btn {
+  display: none;
+}
+.section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row-content h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.row-content p {
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 768px) {
+  .main-menu {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    background-color: #252525;
+    transition: 0.5s all ease;
+    /* visibility: hidden; */
+    display: none;
+    align-items: center;
+    transform: translateX(-800px);
+    padding-top: 60px;
+  }
+
+  .main-menu.show {
+    transform: translateX(0px);
+    transition: 0.5s all ease;
+  }
+  .main-menu li a {
+    margin-bottom: 10px;
+    display: block;
+  }
+  .menu-btn {
+    display: block;
+    position: absolute;
+    color: white;
+    top: 10px;
+    right: 30px;
+    font-size: 2rem;
+  }
+}
+
+
+
+
+
+
+
+.ContactWrapper {
+    display: grid;
+}
+.SocialBox img {
+    width: 50%;
+    max-height: 70px;
+    max-width: 70px;
+}
+.SocialBox h3 {
+    font-size: 2em;
+}
+.SocialBox a {
+    all:unset;
+    text-decoration: underline;
+}
+.SocialBox a:hover {
+    cursor: pointer;
+}
+.ContactWrapper {
+    display: block;
+    margin: 5%;
+}
+
+.OuterSocial {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    padding-top: 1.5em;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.SocialBox {
+    display: block;
+    width: 100%;
+}
+.SocialBoxContainer {
+    margin: 0 2em;
+    padding: 0;
+    color: rgb(0, 0, 0);
+}
+.SocialLinkGrid {
+    display: grid;
+    grid-template-columns: 3em 3em;
+    grid-template-rows: 3em 3em;
+    grid-gap: 0.5em;
+    margin-bottom: 2em;
+    justify-content: center;
+}
+#two {
+    grid-column: 2;
+    grid-row: 1;
+}
+#three {
+    grid-column: 2;
+    grid-row: 2;
+}
+#four {
+    grid-column: 1;
+    grid-row: 2;
+}
+.SocialBox img {
+    width: 100%;
+}
+.SocialBox a {
+    margin: 0;
+    padding: 0;
+}
+
+.OuterSocial h2, .FormHeader h2 {
+    text-align: center;
+}
+.ContactWrapper form {
+    text-align: center;
+    margin: auto;
+}
+.Form input, .Form textarea {
+    display: block;
+    border: none;
+    border-bottom: 1px solid black;
+    margin: auto auto 1em;
+    text-align: left;
+    width: 65%;
+}
+.Form textarea {
+    resize: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+}
+
+@media screen and (min-width: 1024px) {
+    
+    /* Sets color and other elements of main */
+    main {
+        border-radius: 10px;
+
+        padding: 2em;
+        width: 80%;
+        margin: auto;
+    }
+
+    .ContactWrapper {
+        display: grid;
+        grid-template-columns: .4fr 1fr;
+        grid-template-rows: auto 1fr;
+        grid-gap: 1.5em;
+    }
+
+    .OuterSocial {
+        padding-top: 0;
+        text-align: left;
+    }
+
+    .SocialBox {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .SocialLinkGrid {
+        justify-content: left;
+    }
+
+    .OuterSocial h2, .FormHeader h2, .FormHeader p, .Form label {
+        text-align: left;
+    }
+
+    form {
+        grid-column: 2;
+        grid-row: 1 / 3;
+        display: grid;
+    }
+
+    .Form {
+        padding: 2em 2em 2em 2em;
+        background-color: white;
+        border: 10px double rgb(51, 51, 51);
+        border-top: none;
+        display: grid;
+        grid-template-columns: .3fr 1fr;
+        grid-row-gap: 2em;
+    }
+
+    .Form input, .Form textarea {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .FormHeader {
+        max-width: 100%;
+        background-color: rgb(186, 184, 184);
+        padding: 1em;
+        margin: 0;
+        color: rgb(0, 0, 0);
+        border: 10px double rgb(51, 51, 51);
+    }
+
+    .Form button {
+        grid-column: 2;
+        width: 4em;
+        text-align: center;
+        margin: auto 0 1em auto;
+    }
+}
