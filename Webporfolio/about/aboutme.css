@@ -1,1 +1,91 @@
+/* Creates grid, sets color and fixes overflow */
+.Wrapper {
+  display: grid;
+  grid-template-rows: minmax(min-content, max-content);
+  overflow-wrap: break-word;
+  margin: auto;
+}
+
+/* Centers and pads top of page quote */
+.IndexQuote {
+  display: none;
+
+}
+
+/* Centers and pads profile picture */
+.IndexProfilePic {
+  grid-row: 2;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 2em;
+}
+
+/* Rounds corners of image and sets width */
+.IndexProfilePic img {
+  margin-top: 2em;
+  width: 250px;
+  border-radius: 40px;
+}
+
+/* Place about me in grid */
+.IndexAboutMe {
+  grid-row: 3 / 4;
+}
+
+/* Style the h2 */
+.IndexAboutMe h2 {
+  font-size: 2em;
+  text-align: center;
+}
+
+/* Style about me p */
+.IndexAboutMe p {
+  padding: 0 1.5em;
+  font-size: 1.5em;
+}
+
+/* Styles skills area */
+.IndexSkills {
+  grid-row: 5;
+  display: block;
+  padding: 30px;
+}
+
+/* Setting h3 fonts */
+.IndexSkills h3 {
+  text-decoration: underline;
+  text-align: center;
+  padding-top: 1em;
+  font-size: 1.5em;
+}
+
+/* Styling list */
+.IndexSkills ul {
+  text-align: center;
+  padding-bottom: 0.25em;
+  padding-top: 0.5em;
+  padding-left: 0;
+  font-size: 1.5em;
+  text-decoration: none;
+  list-style: none;
+}
+
+/* Spaces out all list items */
+.IndexSkills li:not(:first-of-type) {
+  padding-top: 0.15em;
+}
+.IndexSkills li:not(:last-of-type) {
+  padding-bottom: 0.15em;
+}
+
+/* Remove skills styles on links */
+.IndexSkills a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Remove abbr styles */
+abbr {
+  all: unset;
+}
 
