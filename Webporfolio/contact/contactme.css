@@ -25,6 +25,7 @@
 }
 
 @media screen and (min-width: 1024px) {
+
     /* Sets color and other elements of main */
     main {
         border-radius: 10px;
@@ -97,7 +98,7 @@
   .card__collection {
     position: relative;
     display: block;
-    background: rgba(10, 10, 10, 0.5);
+    background: transparent;
     padding: 10px;
     overflow: hidden;
   }
@@ -169,7 +170,7 @@
   .card__collection .cards--two__tri:before {
     border-top: 220px solid transparent;
     border-bottom: 190px solid transparent;
-    border-right: 288px solid #57ccfd;
+    border-right: 288px solid #01618a;
     position: absolute;
     content: '';
     display: block;
@@ -197,7 +198,7 @@
     width: 100%;
     position: relative;
     height: 100%;
-    background: #f07306;
+    background: #4e4e4e;
     transform: translateY(200px);
     z-index: 2;
     transition: all 0.3s ease-in-out;
