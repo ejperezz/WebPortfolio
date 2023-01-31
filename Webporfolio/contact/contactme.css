@@ -1,75 +1,9 @@
+
 .ContactWrapper {
-    display: grid;
-}
-.SocialBox img {
-    width: 50%;
-    max-height: 70px;
-    max-width: 70px;
-}
-.SocialBox h3 {
-    font-size: 2em;
-}
-.SocialBox a {
-    all:unset;
-    text-decoration: underline;
-}
-.SocialBox a:hover {
-    cursor: pointer;
-}
-.ContactWrapper {
-    display: block;
+    display: flex;
     margin: 5%;
 }
 
-.OuterSocial {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 0;
-    padding-top: 1.5em;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-.SocialBox {
-    display: block;
-    width: 100%;
-}
-.SocialBoxContainer {
-    margin: 0 2em;
-    padding: 0;
-    color: rgb(0, 0, 0);
-}
-.SocialLinkGrid {
-    display: grid;
-    grid-template-columns: 3em 3em;
-    grid-template-rows: 3em 3em;
-    grid-gap: 0.5em;
-    margin-bottom: 2em;
-    justify-content: center;
-}
-#two {
-    grid-column: 2;
-    grid-row: 1;
-}
-#three {
-    grid-column: 2;
-    grid-row: 2;
-}
-#four {
-    grid-column: 1;
-    grid-row: 2;
-}
-.SocialBox img {
-    width: 100%;
-}
-.SocialBox a {
-    margin: 0;
-    padding: 0;
-}
-
-.OuterSocial h2, .FormHeader h2 {
-    text-align: center;
-}
 .ContactWrapper form {
     text-align: center;
     margin: auto;
@@ -91,7 +25,6 @@
 }
 
 @media screen and (min-width: 1024px) {
-    
     /* Sets color and other elements of main */
     main {
         border-radius: 10px;
@@ -102,28 +35,10 @@
     }
 
     .ContactWrapper {
-        display: grid;
+        display: flex;
         grid-template-columns: .4fr 1fr;
         grid-template-rows: auto 1fr;
         grid-gap: 1.5em;
-    }
-
-    .OuterSocial {
-        padding-top: 0;
-        text-align: left;
-    }
-
-    .SocialBox {
-        grid-column: 1;
-        grid-row: 1;
-    }
-
-    .SocialLinkGrid {
-        justify-content: left;
-    }
-
-    .OuterSocial h2, .FormHeader h2, .FormHeader p, .Form label {
-        text-align: left;
     }
 
     form {
@@ -163,3 +78,154 @@
         margin: auto 0 1em auto;
     }
 }
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .clear-fix:after {
+    display: block;
+    clear: both;
+    content: '';
+  }
+  .img-responsive {
+    max-width: 100%;
+    height: auto;
+  }
+  .card__collection {
+    position: relative;
+    display: block;
+    background: rgba(10, 10, 10, 0.5);
+    padding: 10px;
+    overflow: hidden;
+  }
+  .card__collection .cards {
+    width: 300px;
+    height: 400px;
+    display: block;
+    background-size: cover;
+    float: left;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    background-position: center;
+    margin: 10px;
+    
+  }
+  
+  
+  
+  .card__collection .cards--two {
+    position: relative;
+    backface-visibility: hidden;
+  }
+  .card__collection .cards--two p {
+    position: absolute;
+    top: 83%;
+    left: -100%;
+    text-transform: capitalize;
+    color: #fff;
+    font-size: 20px;
+    z-index: 8;
+    transition: all 0.6s ease;
+  }
+  .card__collection .cards--two:hover p {
+    left: 8%;
+  }
+  .card__collection .cards--two:hover img {
+    transform: translateY(-15px);
+  }
+  .card__collection .cards--two:hover .cards--two__rect {
+    top: 75%;
+  }
+  .card__collection .cards--two:hover .cards--two__rect:before {
+    transform: translateY(15px);
+  }
+  .card__collection .cards--two:hover li {
+    transform: translateY(0);
+  }
+  .card__collection .cards--two:hover .cards--two__tri {
+    right: -40%;
+  }
+  .card__collection .cards--two:hover .cards--two__tri:before {
+    right: -312px;
+  }
+  .card__collection .cards--two img {
+    transition: all 0.2s ease;
+  }
+  .card__collection .cards--two__tri {
+    border-top: 220px solid transparent;
+    border-bottom: 190px solid transparent;
+    border-right: 288px solid #fff;
+    opacity: 0.9;
+    position: absolute;
+    display: block;
+    top: 0;
+    right: -100%;
+    transition: all 0.3s ease-in-out;
+  }
+  .card__collection .cards--two__tri:before {
+    border-top: 220px solid transparent;
+    border-bottom: 190px solid transparent;
+    border-right: 288px solid #57ccfd;
+    position: absolute;
+    content: '';
+    display: block;
+    top: -220px;
+    right: -612px;
+    transition: all 0.3s ease-in-out;
+    transition-delay: 0.2s;
+  }
+  .card__collection .cards--two__rect {
+    width: 750px;
+    height: 200px;
+    background: #fff;
+    display: block;
+    position: absolute;
+    top: 175%;
+    left: -78%;
+    transform: rotate(30deg);
+    z-index: 5;
+    opacity: 0.9;
+    transition: all 0.3s ease-in-out;
+  }
+  .card__collection .cards--two__rect:before {
+    content: '';
+    display: block;
+    width: 100%;
+    position: relative;
+    height: 100%;
+    background: #f07306;
+    transform: translateY(200px);
+    z-index: 2;
+    transition: all 0.3s ease-in-out;
+    transition-delay: 0.1s;
+  }
+  .card__collection .cards--two ul {
+    list-style: none;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    z-index: 9;
+  }
+  .card__collection .cards--two ul li {
+    display: inline-block;
+    font-size: 16px;
+    margin: 7px;
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+    transform: translateY(100px);
+  }
+  .card__collection .cards--two ul li:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+  .card__collection .cards--two ul li:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+  .card__collection .cards--two ul li:nth-child(4) {
+    transition-delay: 0.4s;
+  }
+
+
