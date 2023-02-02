@@ -1,91 +1,174 @@
-/* Creates grid, sets color and fixes overflow */
-.Wrapper {
-  display: grid;
-  grid-template-rows: minmax(min-content, max-content);
-  overflow-wrap: break-word;
-  margin: auto;
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: .5rem;
+  background-color: #fff;
+  margin: 1.25rem 0 1.25rem 0;
+  box-shadow: 0 .25rem .5rem #e6edef;
 }
 
-/* Centers and pads top of page quote */
-.IndexQuote {
-  display: none;
+  .card-head {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid #edf1f7;
+      font-size: 1.8rem;
+      font-weight: 600;
+  }
 
-}
+  .card-body {
+      padding: 1rem 1.5rem;
+  }
 
-/* Centers and pads profile picture */
-.IndexProfilePic {
-  grid-row: 2;
-  align-items: center;
-  text-align: center;
-  padding-bottom: 2em;
-}
+  .IndexQ{
+    font-style: italic;
+  }
 
-/* Rounds corners of image and sets width */
-.IndexProfilePic img {
-  margin-top: 2em;
-  width: 250px;
-  border-radius: 40px;
-}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .clear-fix:after {
+    display: block;
+    clear: both;
+    content: '';
+  }
+  .img-responsive {
+    max-width: 100%;
+    height: auto;
+  }
+  .card__collection {
+    position: relative;
+    display: block;
+    background: transparent;
+    padding: 10px;
+    overflow: hidden;
+  }
+  .card__collection .cards {
+    width: 300px;
+    height: 400px;
+    display: block;
+    background-size: cover;
+    float: left;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    background-position: center;
+    margin: 10px;
+    
+  }
+  
+  
+  
+  .card__collection .cards--two {
+    position: relative;
+    backface-visibility: hidden;
+  }
+  .card__collection .cards--two p {
+    position: absolute;
+    top: 83%;
+    left: -100%;
+    text-transform: capitalize;
+    color: #fff;
+    font-size: 20px;
+    z-index: 8;
+    transition: all 0.6s ease;
+  }
+  .card__collection .cards--two:hover p {
+    left: 8%;
+  }
+  .card__collection .cards--two:hover img {
+    transform: translateY(-15px);
+  }
+  .card__collection .cards--two:hover .cards--two__rect {
+    top: 75%;
+  }
+  .card__collection .cards--two:hover .cards--two__rect:before {
+    transform: translateY(15px);
+  }
+  .card__collection .cards--two:hover li {
+    transform: translateY(0);
+  }
+  .card__collection .cards--two:hover .cards--two__tri {
+    right: -40%;
+  }
+  .card__collection .cards--two:hover .cards--two__tri:before {
+    right: -312px;
+  }
+  .card__collection .cards--two img {
+    transition: all 0.2s ease;
+  }
+  .card__collection .cards--two__tri {
+    border-top: 220px solid transparent;
+    border-bottom: 190px solid transparent;
+    border-right: 288px solid #fff;
+    opacity: 0.9;
+    position: absolute;
+    display: block;
+    top: 0;
+    right: -100%;
+    transition: all 0.3s ease-in-out;
+  }
+  .card__collection .cards--two__tri:before {
+    border-top: 220px solid transparent;
+    border-bottom: 190px solid transparent;
+    border-right: 288px solid #01618a;
+    position: absolute;
+    content: '';
+    display: block;
+    top: -220px;
+    right: -612px;
+    transition: all 0.3s ease-in-out;
+    transition-delay: 0.2s;
+  }
+  .card__collection .cards--two__rect {
+    width: 750px;
+    height: 200px;
+    background: #fff;
+    display: block;
+    position: absolute;
+    top: 175%;
+    left: -78%;
+    transform: rotate(30deg);
+    z-index: 5;
+    opacity: 0.9;
+    transition: all 0.3s ease-in-out;
+  }
+  .card__collection .cards--two__rect:before {
+    content: '';
+    display: block;
+    width: 100%;
+    position: relative;
+    height: 100%;
+    background: #4e4e4e;
+    transform: translateY(200px);
+    z-index: 2;
+    transition: all 0.3s ease-in-out;
+    transition-delay: 0.1s;
+  }
+  .card__collection .cards--two ul {
+    list-style: none;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    z-index: 9;
+  }
+  .card__collection .cards--two ul li {
+    display: inline-block;
+    font-size: 16px;
+    margin: 7px;
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+    transform: translateY(100px);
+  }
+  .card__collection .cards--two ul li:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+  .card__collection .cards--two ul li:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+  .card__collection .cards--two ul li:nth-child(4) {
+    transition-delay: 0.4s;
+  }
 
-/* Place about me in grid */
-.IndexAboutMe {
-  grid-row: 3 / 4;
-}
 
-/* Style the h2 */
-.IndexAboutMe h2 {
-  font-size: 2em;
-  text-align: center;
-}
-
-/* Style about me p */
-.IndexAboutMe p {
-  padding: 0 1.5em;
-  font-size: 1.5em;
-}
-
-/* Styles skills area */
-.IndexSkills {
-  grid-row: 5;
-  display: block;
-  padding: 30px;
-}
-
-/* Setting h3 fonts */
-.IndexSkills h3 {
-  text-decoration: underline;
-  text-align: center;
-  padding-top: 1em;
-  font-size: 1.5em;
-}
-
-/* Styling list */
-.IndexSkills ul {
-  text-align: center;
-  padding-bottom: 0.25em;
-  padding-top: 0.5em;
-  padding-left: 0;
-  font-size: 1.5em;
-  text-decoration: none;
-  list-style: none;
-}
-
-/* Spaces out all list items */
-.IndexSkills li:not(:first-of-type) {
-  padding-top: 0.15em;
-}
-.IndexSkills li:not(:last-of-type) {
-  padding-bottom: 0.15em;
-}
-
-/* Remove skills styles on links */
-.IndexSkills a {
-  text-decoration: none;
-  color: black;
-}
-
-/* Remove abbr styles */
-abbr {
-  all: unset;
-}
 
